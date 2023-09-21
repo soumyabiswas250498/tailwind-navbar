@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>NavBar</title>
+  </head>
+  <body class="bg-slate-800 h-screen">
+    <div
+      class="bg-blue-800 min-w-full h-14 text-yellow-100 flex justify-between items-center"
+    >
+      <h2 class="ml-3 text-2xl text-yellow-500">Smart Coders</h2>
+      <div class="">
+        <div class="hidden sm:inline-block">
+          <ul class="flex">
+            <li class="ml-3 hover:text-red-400 cursor-pointer">Home</li>
+            <li class="ml-3 hover:text-red-400 cursor-pointer">Products</li>
+            <li class="ml-3 hover:text-red-400 cursor-pointer">Blog</li>
+            <li class="ml-3 hover:text-red-400 cursor-pointer">Portfolio</li>
+            <li class="mx-3 hover:text-red-400 cursor-pointer">Contact</li>
+          </ul>
+        </div>
+        <div class="sm:hidden" id="ham-button" onclick="display()">
+          <p class="mr-3 text-2xl" id="btn">&#9776;</p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="max-h-fit bg-slate-600 sm:hidden"
+      id="mobile-menu"
+      style="display: none"
+    >
+      <ul class="flex flex-col text-yellow-100 items-center">
+        <li class="my-1">Home</li>
+        <li class="my-1">Products</li>
+        <li class="my-1">Blog</li>
+        <li class="my-1">Protfolio</li>
+        <li class="my-1">Contact</li>
+      </ul>
+    </div>
+    <script>
+      function display(e) {
+        const menu = document.getElementById('mobile-menu');
+        const button = document.getElementById('btn');
+        if (menu.style.display === 'none') {
+          menu.style.display = 'block';
+          button.innerHTML = '&#x292C;';
+        } else {
+          menu.style.display = 'none';
+          button.innerHTML = '&#9776;';
+        }
+      }
+    </script>
+  </body>
+</html>
